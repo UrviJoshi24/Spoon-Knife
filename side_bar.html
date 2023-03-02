@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Side Bar!</title>
+    <style type="text/css">
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: fantasy;
+      }
+      .ticon{
+        font-size: 40;
+        margin: 10px;
+        cursor: pointer;
+      }
+      .menu{
+        width: 50%;
+        height: 100vh;
+        background: black;
+        position: fixed;
+        top: 0px;
+        left: -50%;
+        transition: 1s;
+      }
+      .menu h2{
+        color: white;
+        padding: 25px;
+      }
+      .menu ul li a{
+        display: block;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+      }
+      .close{
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+      }
+      .smenu{
+        left: 0%;
+
+      }
+    </style>
+  </head>
+  <body>
+    <span class="ticon" onclick="showMenu()">&#9776;</span>
+    <div class="menu">
+        <span class="close" onclick="closeMenu()"> &times;</span>
+        <h2>Welcome</h2>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">COurse</a></li>
+            <li><a href="#">Enquiry</a></li>
+            <li><a href="#">COntact Us</a></li>
+        </ul>
+    </div>
+  </body>
+  <script type="text/javascript">
+        function showMenu(){
+            var m=document.querySelector('.menu');// here we have targeted the menu class for further operations.
+            m.classList.add('smenu');//using classlist property with have added a new class named smenu which will bring the side bar to the main page.
+        }
+        function closeMenu(){
+            var m=document.querySelector('.menu');// here we have targeted the menu class for further operations.
+            m.classList.remove('smenu');//using classlist property with remove method we can remove the current class.
+        }
+  </script>
+</html>
